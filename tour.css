@@ -10,6 +10,8 @@ a { color:inherit; text-decoration:none; }
 .tour-nav { position:relative; z-index:4; display:flex; align-items:center; justify-content:space-between; height:90px; border-bottom:1px solid #ffffff26; }
 .logo { font-size:18px; font-weight:800; letter-spacing:2px; }
 .logo span { color:var(--lime); }
+.brand-logo { display:inline-flex; align-items:center; gap:10px; }
+.brand-avatar { width:42px; height:42px; object-fit:cover; border:2px solid #ffffff45; border-radius:50%; }
 .back-link { font-size:13px; opacity:.75; }
 .hero-copy { position:relative; z-index:2; padding-top:95px; }
 .eyebrow { margin:0 0 18px; color:var(--lime); font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; }
@@ -57,4 +59,4 @@ footer .container { display:flex; align-items:center; justify-content:space-betw
 footer p { font-size:12px; opacity:.65; }
 @media(max-width:900px){.attractions-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.tour-hero{min-height:690px}.hero-art{right:5%;bottom:160px;font-size:100px;opacity:.55}.quick-facts{flex-wrap:wrap;gap:25px}.detail-grid{grid-template-columns:1fr;gap:55px}.booking-card{position:static}.back-link{font-size:0}.back-link::after{content:"←";font-size:22px}.attractions-heading{align-items:start;flex-direction:column}}
-@media(max-width:520px){.container{width:calc(100% - 32px)}.hero-copy{padding-top:75px}h1{font-size:68px}.quick-facts{display:grid;grid-template-columns:1fr 1fr}.detail-grid{padding-top:75px;padding-bottom:75px}.attractions-section{padding:75px 0}.attractions-grid{grid-template-columns:1fr}.attraction-card,.attraction-card:nth-child(n+5){min-height:340px}footer .container{align-items:flex-start;flex-direction:column;gap:12px}}
+@media(max-width:520px){body{overflow-x:hidden}.container{width:calc(100% - 32px)}.tour-nav{height:72px}.brand-logo{max-width:190px;font-size:12px;line-height:1.1}.brand-avatar{flex:0 0 auto;width:36px;height:36px}.hero-copy{padding-top:70px}h1{font-size:clamp(50px,16vw,68px);overflow-wrap:anywhere}.hero-copy>p:not(.eyebrow){font-size:15px}.hero-art{bottom:190px;font-size:76px}.quick-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px}.quick-facts div:last-child{grid-column:1/-1}.detail-grid{padding-top:70px;padding-bottom:70px}.program h2,.attractions-heading h2{font-size:42px;line-height:1.05}.booking-card{padding:26px}.booking-card a{justify-content:space-between;width:100%}.attractions-section{padding:75px 0}.attractions-grid{grid-template-columns:1fr}.attraction-card,.attraction-card:nth-child(n+5){min-height:330px}footer .container{align-items:flex-start;flex-direction:column;gap:12px}}

@@ -87,6 +87,30 @@ a {
   color: var(--lime);
 }
 
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-avatar {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border: 2px solid #ffffff45;
+  border-radius: 50%;
+}
+
+.brand-name {
+  color: var(--white) !important;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+
+.brand-name b {
+  color: var(--lime);
+}
+
 .nav-links {
   display: flex;
   gap: 36px;
@@ -633,6 +657,10 @@ footer {
 /* Телефоны */
 
 @media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .container {
     width: min(calc(100% - 32px), 1180px);
   }
@@ -643,6 +671,27 @@ footer {
 
   .nav {
     height: 72px;
+    gap: 8px;
+  }
+
+  .brand-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-name {
+    max-width: 78px;
+    font-size: 10px;
+    line-height: 1.1;
+  }
+
+  .language-switch button {
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+
+  .menu-button {
+    padding: 5px;
   }
 
   .hero-content {
@@ -650,7 +699,8 @@ footer {
   }
 
   h1 {
-    font-size: 50px;
+    font-size: clamp(39px, 12vw, 50px);
+    line-height: 1.02;
   }
 
   .hero-copy {
@@ -661,6 +711,11 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
+  }
+
+  .primary-button {
+    justify-content: space-between;
+    width: 100%;
   }
 
   .hero-stats {
@@ -682,6 +737,15 @@ footer {
 
   .tour-card {
     min-height: 410px;
+    padding: 22px;
+  }
+
+  .tour-card h3 {
+    font-size: 36px;
+  }
+
+  .tour-card p {
+    min-height: auto;
   }
 
   .benefits {
@@ -697,6 +761,13 @@ footer {
     align-items: flex-start;
     padding-top: 75px;
     padding-bottom: 75px;
+  }
+
+  .cta h2,
+  .why h2,
+  .section-heading h2 {
+    font-size: 42px;
+    line-height: 1.05;
   }
 
   .footer-content {
