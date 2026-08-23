@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Подробная информация о туре из Баку" />
+    <title>Тур — Road from Baku</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="tour.css" />
+  </head>
+  <body>
+    <header class="tour-hero">
+      <nav class="tour-nav container">
+        <a class="logo" href="index.html">ROAD <span>FROM BAKU</span></a>
+        <a class="back-link" id="back-link" href="index.html#tours">← Назад к турам</a>
+      </nav>
+
+      <div class="hero-art" id="tour-icon">🏔️</div>
+      <div class="hero-copy container">
+        <p class="eyebrow" id="tour-tag">Горы и природа</p>
+        <h1 id="tour-name">Гусар</h1>
+        <p id="tour-description">Шахдаг, канатная дорога и невероятные горные виды.</p>
+        <div class="quick-facts">
+          <div><span id="duration-label">Продолжительность</span><strong id="tour-duration">1 день</strong></div>
+          <div><span id="departure-label">Выезд</span><strong id="tour-departure">08:00 из Баку</strong></div>
+          <div><span id="price-label">Стоимость</span><strong id="tour-price">от 35 AZN</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container detail-grid">
+      <section class="program">
+        <p class="eyebrow dark" id="program-label">Программа поездки</p>
+        <h2 id="program-title">Что увидим за день</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <aside class="booking-card">
+        <p id="booking-label">Бронирование тура</p>
+        <h2 id="booking-price">35 AZN</h2>
+        <ul>
+          <li id="included-transport">✓ Транспорт из Баку и обратно</li>
+          <li id="included-guide">✓ Сопровождение в поездке</li>
+          <li id="included-stops">✓ Остановки по маршруту</li>
+        </ul>
+        <a id="whatsapp-button" href="https://wa.me/994992280705" target="_blank" rel="noreferrer">Забронировать в WhatsApp <span>↗</span></a>
+        <small id="booking-note">Ответим и уточним свободную дату</small>
+      </aside>
+    </main>
+
+    <footer><div class="container"><a class="logo" href="index.html">ROAD <span>FROM BAKU</span></a><p>+994 99 228 07 05</p></div></footer>
+    <script src="tour.js"></script>
+  </body>
+</html>

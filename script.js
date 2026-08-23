@@ -69,7 +69,7 @@ function setLanguage(language) {
   document.querySelector(".section-heading > p").textContent = t.lead;
   document.querySelectorAll(".tour-card").forEach((card, i) => {
     card.querySelector(".tag").textContent = t.tours[i][0]; card.querySelector("h3").textContent = t.tours[i][1]; card.querySelector("p").textContent = t.tours[i][2]; card.querySelector(".card-bottom span").textContent = t.tours[i][3]; card.querySelector(".card-bottom a").textContent = t.details;
-    card.querySelector(".card-bottom a").href = `https://wa.me/994992280705?text=${encodeURIComponent(messages[language](t.tours[i][1]))}`;
+    card.querySelector(".card-bottom a").href = `tour.html?tour=${card.dataset.tour}&lang=${language}`;
   });
   document.querySelector(".why-copy .eyebrow").textContent = t.ready;
   document.querySelector(".why-copy h2").textContent = t.enjoy;
@@ -86,3 +86,18 @@ function setLanguage(language) {
 
 document.querySelectorAll(".language-switch button").forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
 setLanguage(localStorage.getItem("yolda-language") || "ru");
+
+document.querySelectorAll(".tour-card").forEach((card) => {
+  const openTour = () => {
+    const language = localStorage.getItem("yolda-language") || "ru";
+    window.location.href = `tour.html?tour=${card.dataset.tour}&lang=${language}`;
+  };
+
+  card.addEventListener("click", (event) => {
+    if (!event.target.closest("a")) openTour();
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") openTour();
+  });
+});

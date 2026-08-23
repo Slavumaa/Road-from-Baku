@@ -348,6 +348,15 @@ h1 em {
   transform: translateY(-8px);
 }
 
+.tour-card {
+  cursor: pointer;
+}
+
+.tour-card:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 4px;
+}
+
 .tour-card::before {
   position: absolute;
   inset: 0;
