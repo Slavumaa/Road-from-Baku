@@ -1,0 +1,698 @@
+:root {
+  --ink: #10251f;
+  --forest: #123d31;
+  --green: #1f6b52;
+  --lime: #d7ef9f;
+  --cream: #f4f1e8;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "Manrope", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: auto;
+}
+
+/* Главный экран */
+
+.hero {
+  position: relative;
+  min-height: 760px;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      #42765f 0,
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #0e2922,
+      #1d5846 62%,
+      #31715a
+    );
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  opacity: 0.18;
+  background-image: radial-gradient(
+    #ffffff 0.8px,
+    transparent 0.8px
+  );
+  background-size: 18px 18px;
+}
+
+/* Навигация */
+
+.nav {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 92px;
+  border-bottom: 1px solid #ffffff26;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: var(--lime);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  font-size: 14px;
+}
+
+.nav-links a {
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-button {
+  padding: 12px 22px;
+  font-size: 14px;
+  border: 1px solid #ffffff70;
+  border-radius: 30px;
+}
+
+.language-switch {
+  display: flex;
+  padding: 3px;
+  border: 1px solid #ffffff35;
+  border-radius: 30px;
+}
+
+.language-switch button {
+  padding: 7px 9px;
+  color: #ffffffa8;
+  font: 700 10px "Manrope", sans-serif;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 20px;
+}
+
+.language-switch button.active {
+  color: var(--ink);
+  background: var(--lime);
+}
+
+.menu-button {
+  display: none;
+  color: var(--white);
+  font-size: 25px;
+  background: none;
+  border: 0;
+}
+
+/* Текст главного экрана */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 110px;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.eyebrow.dark {
+  color: var(--green);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  line-height: 0.98;
+  letter-spacing: -2px;
+}
+
+h1 {
+  max-width: 950px;
+  font-size: clamp(55px, 7vw, 95px);
+}
+
+h1 em {
+  color: var(--lime);
+}
+
+.hero-copy {
+  max-width: 590px;
+  margin: 30px 0;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.78;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 17px 24px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  background: var(--lime);
+  border-radius: 4px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.primary-button:hover {
+  background: #e4f8b5;
+  transform: translateY(-3px);
+}
+
+.primary-button span {
+  font-size: 20px;
+}
+
+.text-button {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text-button i {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-right: 9px;
+  font-size: 10px;
+  font-style: normal;
+  border: 1px solid #ffffff55;
+  border-radius: 50%;
+}
+
+/* Статистика */
+
+.hero-stats {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  gap: 45px;
+  transform: translateX(-50%);
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  border-left: 2px solid var(--lime);
+}
+
+.hero-stats strong {
+  font-size: 21px;
+}
+
+.hero-stats span {
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+/* Декоративные горы */
+
+.mountain {
+  position: absolute;
+  pointer-events: none;
+  clip-path: polygon(
+    0 100%,
+    18% 48%,
+    30% 67%,
+    48% 9%,
+    61% 48%,
+    71% 26%,
+    100% 100%
+  );
+}
+
+.mountain-back {
+  right: -5%;
+  bottom: 0;
+  width: 70%;
+  height: 65%;
+  background: #ffffff10;
+}
+
+.mountain-front {
+  right: -4%;
+  bottom: 0;
+  width: 50%;
+  height: 48%;
+  background: linear-gradient(
+    145deg,
+    #d7ef9f16,
+    #071b17cc
+  );
+}
+
+/* Раздел с турами */
+
+.section {
+  padding: 110px 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.section-heading h2,
+.why h2,
+.cta h2 {
+  font-size: clamp(42px, 5vw, 68px);
+}
+
+.section-heading > p {
+  max-width: 430px;
+  color: #65736d;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Карточки туров */
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 13px;
+}
+
+.tour-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 440px;
+  padding: 19px;
+  overflow: hidden;
+  color: var(--white);
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+
+.tour-card:hover {
+  transform: translateY(-8px);
+}
+
+.tour-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+}
+
+.tour-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(
+    transparent 20%,
+    #071b16e8
+  );
+}
+
+/* Фоны карточек */
+
+.card-gusar::before {
+  background:
+    radial-gradient(
+      circle at 65% 25%,
+      #d9ece3 0 8%,
+      transparent 9%
+    ),
+    linear-gradient(
+      155deg,
+      #89a99b 0 40%,
+      #244d42 41% 62%,
+      #143129 63%
+    );
+}
+
+.card-sheki::before {
+  background:
+    linear-gradient(
+      30deg,
+      #b37242 0 28%,
+      transparent 29%
+    ),
+    linear-gradient(
+      150deg,
+      #ecd3a3 0 40%,
+      #8a4e2e 41% 63%,
+      #3a241a 64%
+    );
+}
+
+.card-ismayilli::before {
+  background:
+    radial-gradient(
+      ellipse at 70% 20%,
+      #b8cf9b 0 12%,
+      transparent 13%
+    ),
+    linear-gradient(
+      150deg,
+      #91a982 0 35%,
+      #416b48 36% 62%,
+      #183d2c 63%
+    );
+}
+
+.card-gabala::before {
+  background:
+    linear-gradient(
+      175deg,
+      transparent 0 55%,
+      #4b8b88 56% 70%,
+      #17433d 71%
+    ),
+    linear-gradient(
+      150deg,
+      #b6d4d1 0 35%,
+      #477c68 36% 60%,
+      #203f35 61%
+    );
+}
+
+.card-shamakhi::before {
+  background:
+    radial-gradient(
+      circle at 62% 23%,
+      #f1dfb1 0 7%,
+      transparent 8%
+    ),
+    linear-gradient(
+      150deg,
+      #cabd94 0 36%,
+      #8b7650 37% 61%,
+      #3b3424 62%
+    );
+}
+
+.card-number {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.card-art {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  font-size: 66px;
+  transform: translateX(-50%);
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--lime);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.tour-card h3 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+}
+
+.tour-card p {
+  min-height: 76px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  opacity: 0.72;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 16px;
+  font-size: 10px;
+  border-top: 1px solid #ffffff30;
+}
+
+.card-bottom span {
+  font-weight: 800;
+}
+
+.card-bottom a {
+  color: var(--lime);
+}
+
+/* Раздел преимуществ */
+
+.why {
+  padding: 110px 0;
+  color: var(--white);
+  background: var(--forest);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+}
+
+.why-copy > p:last-child {
+  max-width: 500px;
+  color: #ffffff99;
+  line-height: 1.8;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 35px;
+}
+
+.benefits div {
+  padding-top: 20px;
+  border-top: 1px solid #ffffff33;
+}
+
+.benefits span {
+  color: var(--lime);
+  font-size: 11px;
+}
+
+.benefits h3 {
+  margin: 42px 0 12px;
+  font-size: 16px;
+}
+
+.benefits p {
+  color: #ffffff88;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Контакты */
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 350px;
+  gap: 40px;
+}
+
+.cta h2 {
+  max-width: 750px;
+}
+
+/* Нижняя часть сайта */
+
+footer {
+  padding: 36px 0;
+  color: var(--white);
+  background: #091c17;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-content p {
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+/* Планшеты */
+
+@media (max-width: 900px) {
+  .tour-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .nav-links,
+  .nav-button {
+    display: none;
+  }
+
+  .nav-links.is-open {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 24px;
+    background: #102b24;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+/* Телефоны */
+
+@media (max-width: 600px) {
+  .container {
+    width: min(calc(100% - 32px), 1180px);
+  }
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .nav {
+    height: 72px;
+  }
+
+  .hero-content {
+    padding-top: 90px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .hero-copy {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .hero-stats {
+    bottom: 22px;
+    gap: 20px;
+  }
+
+  .hero-stats div:last-child {
+    display: none;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .tour-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-card {
+    min-height: 410px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits h3 {
+    margin-top: 18px;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
