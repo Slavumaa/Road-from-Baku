@@ -50,6 +50,11 @@ const translations = {
 
 function setLanguage(language) {
   const t = translations[language];
+  const messages = {
+    ru: (tour) => `Здравствуйте! Меня интересует тур: ${tour}. Расскажите, пожалуйста, подробнее.`,
+    az: (tour) => `Salam! ${tour} turu ilə maraqlanıram. Zəhmət olmasa, ətraflı məlumat verin.`,
+    en: (tour) => `Hello! I am interested in the ${tour} tour. Please tell me more.`
+  };
   document.documentElement.lang = language;
   document.querySelectorAll(".nav-links a").forEach((el, i) => el.textContent = t.nav[i]);
   document.querySelector(".nav-button").textContent = t.contact;
@@ -64,6 +69,7 @@ function setLanguage(language) {
   document.querySelector(".section-heading > p").textContent = t.lead;
   document.querySelectorAll(".tour-card").forEach((card, i) => {
     card.querySelector(".tag").textContent = t.tours[i][0]; card.querySelector("h3").textContent = t.tours[i][1]; card.querySelector("p").textContent = t.tours[i][2]; card.querySelector(".card-bottom span").textContent = t.tours[i][3]; card.querySelector(".card-bottom a").textContent = t.details;
+    card.querySelector(".card-bottom a").href = `https://wa.me/994992280705?text=${encodeURIComponent(messages[language](t.tours[i][1]))}`;
   });
   document.querySelector(".why-copy .eyebrow").textContent = t.ready;
   document.querySelector(".why-copy h2").textContent = t.enjoy;
@@ -72,6 +78,7 @@ function setLanguage(language) {
   document.querySelector(".cta .eyebrow").textContent = t.ctaTop;
   document.querySelector(".cta h2").textContent = t.cta;
   document.querySelector(".cta .primary-button").innerHTML = t.whatsapp;
+  document.querySelector(".cta .primary-button").href = `https://wa.me/994992280705?text=${encodeURIComponent(messages[language](t.where))}`;
   document.querySelector(".footer-content p").textContent = t.footer;
   document.querySelectorAll(".language-switch button").forEach(button => button.classList.toggle("active", button.dataset.lang === language));
   localStorage.setItem("yolda-language", language);
