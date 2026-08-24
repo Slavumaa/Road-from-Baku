@@ -24,7 +24,20 @@ const params = new URLSearchParams(location.search);
 const key = tours[params.get("tour")] ? params.get("tour") : "gusar";
 const lang = ["ru","az","en"].includes(params.get("lang")) ? params.get("lang") : (localStorage.getItem("yolda-language") || "ru");
 const tour = tours[key]; const data = tour[lang]; const text = ui[lang];
-document.documentElement.lang=lang; document.title=`${data[1]} — Road from Baku`;
+const seo = {
+  gusar: ["Тур из Баку в Гусар и Шахдаг", "Однодневный тур из Баку в Гусар и Шахдаг: горы, канатная дорога, Красная Слобода и красивые виды. Цена от 35 AZN."],
+  sheki: ["Тур из Баку в Шеки", "Однодневный тур из Баку в Шеки: Дворец шекинских ханов, караван-сарай, старый город и знаменитая пахлава. Цена от 40 AZN."],
+  ismayilli: ["Тур из Баку в Исмаиллы и Лагич", "Однодневный тур из Баку в Исмаиллы и Лагич: ремесленные улицы, горные леса и исторические сёла. Цена от 35 AZN."],
+  gabala: ["Тур из Баку в Габалу", "Однодневный тур из Баку в Габалу: озеро Нохур, канатная дорога Туфандаг и зелёные горы. Цена от 40 AZN."],
+  shamakhi: ["Тур из Баку в Шамаху", "Однодневный тур из Баку в Шамаху: Джума-мечеть, Пиркули, обсерватория и исторические места. Цена от 35 AZN."]
+};
+const canonicalUrl=`https://roadfrombaku.com/tour.html?tour=${key}`;
+const [seoTitle,seoDescription]=seo[key];
+document.documentElement.lang=lang; document.title=`${seoTitle} | Road from Baku`;
+document.querySelector('meta[name="description"]').setAttribute("content",seoDescription);
+const canonical=document.createElement("link"); canonical.rel="canonical"; canonical.href=canonicalUrl; document.head.appendChild(canonical);
+[["og:title",`${seoTitle} | Road from Baku`],["og:description",seoDescription],["og:url",canonicalUrl],["og:image",`https://roadfrombaku.com/assets/attractions/${key}-hero.jpg`]].forEach(([property,content])=>{const meta=document.createElement("meta");meta.setAttribute("property",property);meta.content=content;document.head.appendChild(meta);});
+const structured=document.createElement("script"); structured.type="application/ld+json"; structured.textContent=JSON.stringify({"@context":"https://schema.org","@type":"TouristTrip",name:seoTitle,description:seoDescription,image:`https://roadfrombaku.com/assets/attractions/${key}-hero.jpg`,touristType:"Экскурсионный тур",provider:{"@type":"TravelAgency",name:"Road from Baku",url:"https://roadfrombaku.com/",telephone:"+994998870511"},offers:{"@type":"Offer",price:data[3].replace(/[^0-9]/g,""),priceCurrency:"AZN",availability:"https://schema.org/InStock",url:canonicalUrl}}); document.head.appendChild(structured);
 document.querySelector("#tour-icon").textContent=tour.icon; document.querySelector("#tour-tag").textContent=data[0]; document.querySelector("#tour-name").textContent=data[1]; document.querySelector("#tour-description").textContent=data[2]; document.querySelector("#tour-price").textContent=data[3]; document.querySelector("#booking-price").textContent=data[3];
 document.querySelector("#back-link").textContent=text.back; document.querySelector("#duration-label").textContent=text.duration; document.querySelector("#tour-duration").textContent=text.day; document.querySelector("#departure-label").textContent=text.departure; document.querySelector("#tour-departure").textContent=text.time; document.querySelector("#price-label").textContent=text.price; document.querySelector("#program-label").textContent=text.program; document.querySelector("#program-title").textContent=text.see; document.querySelector("#booking-label").textContent=text.book;
 document.querySelectorAll(".booking-card li").forEach((item,i)=>item.textContent=text.items[i]); document.querySelector("#booking-note").textContent=text.note; const whatsapp=document.querySelector("#whatsapp-button"); whatsapp.innerHTML=text.button; whatsapp.href=`https://wa.me/994998870511?text=${encodeURIComponent(text.message(data[1]))}`;
