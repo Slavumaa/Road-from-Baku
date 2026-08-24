@@ -78,7 +78,7 @@ function setLanguage(language) {
   document.querySelector(".cta .eyebrow").textContent = t.ctaTop;
   document.querySelector(".cta h2").textContent = t.cta;
   document.querySelector(".cta .primary-button").innerHTML = t.whatsapp;
-  document.querySelector(".cta .primary-button").href = `https://wa.me/994992280705?text=${encodeURIComponent(messages[language](t.where))}`;
+  document.querySelector(".cta .primary-button").href = `https://wa.me/994998870511?text=${encodeURIComponent(messages[language](t.where))}`;
   document.querySelector(".footer-content p").textContent = t.footer;
   document.querySelectorAll(".language-switch button").forEach(button => button.classList.toggle("active", button.dataset.lang === language));
   localStorage.setItem("yolda-language", language);
