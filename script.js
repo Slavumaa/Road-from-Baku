@@ -13,7 +13,8 @@ const translations = {
       ["История и культура", "Шеки", "Ханский дворец, караван-сарай и знаменитая пахлава.", "от 40 AZN"],
       ["Лес и традиции", "Исмаиллы", "Лагич, ремесленные улочки и тишина горных лесов.", "от 35 AZN"],
       ["Озёра и отдых", "Габала", "Озеро Нохур, Туфандаг и день среди зелёных гор.", "от 40 AZN"],
-      ["История и звёзды", "Шамаха", "Джума-мечеть, виноградники и знаменитая обсерватория.", "от 35 AZN"]
+      ["История и звёзды", "Шамаха", "Джума-мечеть, виноградники и знаменитая обсерватория.", "от 35 AZN"],
+      ["Город и архитектура", "Баку", "Старый город, Пламенные башни и современная архитектура столицы.", "по запросу"]
     ], details: "Подробнее →", ready: "Всё уже продумано", enjoy: "Вам остаётся только наслаждаться дорогой", about: "Забираем из удобной точки в Баку, сопровождаем весь день и возвращаем домой с новыми впечатлениями.",
     benefits: [["Комфортный транспорт", "Чистые автомобили и опытные водители."], ["Небольшие группы", "Больше внимания и никакой спешки."], ["Честная стоимость", "Все условия известны до начала поездки."]],
     ctaTop: "Готовы к путешествию?", cta: "Давайте выберем ваш следующий маршрут", whatsapp: "Написать в WhatsApp <span>↗</span>", footer: "Туры из Баку по Азербайджану"
@@ -27,7 +28,8 @@ const translations = {
       ["Tarix və mədəniyyət", "Şəki", "Xan sarayı, karvansara və məşhur Şəki paxlavası.", "40 AZN-dən"],
       ["Meşə və ənənələr", "İsmayıllı", "Lahıc, sənətkar küçələri və dağ meşələrinin sakitliyi.", "35 AZN-dən"],
       ["Göllər və istirahət", "Qəbələ", "Nohur gölü, Tufandağ və yaşıl dağlar arasında bir gün.", "40 AZN-dən"],
-      ["Tarix və ulduzlar", "Şamaxı", "Cümə məscidi, üzüm bağları və məşhur rəsədxana.", "35 AZN-dən"]
+      ["Tarix və ulduzlar", "Şamaxı", "Cümə məscidi, üzüm bağları və məşhur rəsədxana.", "35 AZN-dən"],
+      ["Şəhər və memarlıq", "Bakı", "İçərişəhər, Alov qüllələri və paytaxtın müasir memarlığı.", "sorğu ilə"]
     ], details: "Ətraflı →", ready: "Hər şey düşünüldü", enjoy: "Sizə yalnız yolun dadını çıxarmaq qalır", about: "Sizi Bakıda rahat nöqtədən götürür, bütün gün müşayiət edir və yeni təəssüratlarla geri qaytarırıq.",
     benefits: [["Rahat nəqliyyat", "Təmiz avtomobillər və təcrübəli sürücülər."], ["Kiçik qruplar", "Daha çox diqqət və heç bir tələskənlik."], ["Dürüst qiymət", "Bütün şərtlər səfərdən əvvəl məlumdur."]],
     ctaTop: "Səyahətə hazırsınız?", cta: "Növbəti marşrutunuzu birlikdə seçək", whatsapp: "WhatsApp-da yazın <span>↗</span>", footer: "Bakıdan Azərbaycan üzrə turlar"
@@ -41,7 +43,8 @@ const translations = {
       ["History & culture", "Sheki", "Khan's Palace, caravanserai and the famous local baklava.", "from 40 AZN"],
       ["Forest & traditions", "Ismayilli", "Lahij, artisan streets and the calm of mountain forests.", "from 35 AZN"],
       ["Lakes & leisure", "Gabala", "Nohur Lake, Tufandag and a day among green mountains.", "from 40 AZN"],
-      ["History & stars", "Shamakhi", "Juma Mosque, vineyards and the famous observatory.", "from 35 AZN"]
+      ["History & stars", "Shamakhi", "Juma Mosque, vineyards and the famous observatory.", "from 35 AZN"],
+      ["City & architecture", "Baku", "Old City, Flame Towers and the capital's modern architecture.", "on request"]
     ], details: "Details →", ready: "Everything is arranged", enjoy: "All you need to do is enjoy the journey", about: "We pick you up at a convenient point in Baku, accompany you all day and bring you home with new memories.",
     benefits: [["Comfortable transport", "Clean vehicles and experienced drivers."], ["Small groups", "More attention and no rushing."], ["Clear pricing", "All terms are known before the journey."]],
     ctaTop: "Ready to travel?", cta: "Let's choose your next destination", whatsapp: "Message us on WhatsApp <span>↗</span>", footer: "Tours from Baku across Azerbaijan"

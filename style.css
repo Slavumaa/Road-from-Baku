@@ -477,6 +477,10 @@ h1 em {
     );
 }
 
+.card-baku::before {
+  background: url("assets/attractions/baku-hero.jpg") center / cover no-repeat;
+}
+
 .card-number {
   position: absolute;
   top: 18px;
