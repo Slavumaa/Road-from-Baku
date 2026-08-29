@@ -16,6 +16,17 @@ const attractions = {
   baku: ["Старый город Ичери-шехер", "Девичья башня", "Дворец Ширваншахов", "Место съёмки «Бриллиантовой руки»", "Смотровая площадка", "Пламенные башни", "Первая нефтяная скважина", "Центр Гейдара Алиева"]
 };
 
+const bakuAttractionImages = [
+  "baku-old-city.jpg",
+  "baku-maiden-tower.jpg",
+  "baku-old-city.jpg",
+  "baku-old-city.jpg",
+  "baku-flame-towers.jpg",
+  "baku-flame-towers.jpg",
+  "baku-flame-towers.jpg",
+  "baku-heydar-center.jpg"
+];
+
 const ui = {
   ru:{back:"← Назад к турам",duration:"Продолжительность",day:"1 день",departure:"Выезд",time:"08:00 из Баку",price:"Стоимость",program:"Программа поездки",see:"Что увидим за день",book:"Бронирование тура",items:["✓ Транспорт из Баку и обратно","✓ Сопровождение в поездке","✓ Остановки по маршруту"],button:"Забронировать в WhatsApp <span>↗</span>",note:"Ответим и уточним свободную дату",sights:"Что посетить",attractions:"Главные достопримечательности",attractionsCopy:"Лучшие природные, исторические и культурные места региона.",place:"Место для посещения во время путешествия.",message:n=>`Здравствуйте! Хочу забронировать тур: ${n}.`},
   az:{back:"← Turlara qayıt",duration:"Müddət",day:"1 gün",departure:"Çıxış",time:"08:00 Bakıdan",price:"Qiymət",program:"Səyahət proqramı",see:"Bir gündə görəcəklərimiz",book:"Turun rezervasiyası",items:["✓ Bakıdan nəqliyyat və geri dönüş","✓ Səyahət boyu müşayiət","✓ Marşrut üzrə dayanacaqlar"],button:"WhatsApp-da rezerv et <span>↗</span>",note:"Cavab verib uyğun tarixi dəqiqləşdirəcəyik",sights:"Görməli yerlər",attractions:"Əsas görməli yerlər",attractionsCopy:"Regionun ən yaxşı təbiət, tarix və mədəniyyət məkanları.",place:"Səyahət zamanı ziyarət ediləcək məkan.",message:n=>`Salam! ${n} turunu rezerv etmək istəyirəm.`},
@@ -47,4 +58,4 @@ document.querySelectorAll(".booking-card li").forEach((item,i)=>item.textContent
 document.querySelector("#timeline").innerHTML=data[4].map((item,i)=>`<div class="timeline-item"><span class="timeline-number">0${i+1}</span><div><h3>${item}</h3><p>${text.day}</p></div></div>`).join("");
 document.querySelector(".tour-hero").style.backgroundImage=`url("assets/attractions/${key}-hero.jpg")`;
 document.querySelector("#attractions-label").textContent=text.sights; document.querySelector("#attractions-title").textContent=text.attractions; document.querySelector("#attractions-copy").textContent=text.attractionsCopy;
-document.querySelector("#attractions-grid").innerHTML=attractions[key].map((name,i)=>{const visual=key==="baku"?"":`<img src="assets/attractions/${key}-${(i%3)+1}.jpg" alt="${name}" loading="lazy">`;const artClass=key==="baku"?" attraction-card--art":"";return `<article class="attraction-card${artClass}">${visual}<div class="attraction-card-content"><span class="attraction-card-number">0${i+1}</span><h3>${name}</h3><p>${text.place}</p></div></article>`;}).join("");
+document.querySelector("#attractions-grid").innerHTML=attractions[key].map((name,i)=>{const imageFile=key==="baku"?bakuAttractionImages[i]:`${key}-${(i%3)+1}.jpg`;return `<article class="attraction-card"><img src="assets/attractions/${imageFile}" alt="${name}" loading="lazy"><div class="attraction-card-content"><span class="attraction-card-number">0${i+1}</span><h3>${name}</h3><p>${text.place}</p></div></article>`;}).join("");
