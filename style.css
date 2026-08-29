@@ -478,7 +478,10 @@ h1 em {
 }
 
 .card-baku::before {
-  background: url("assets/attractions/baku-hero.jpg") center / cover no-repeat;
+  background:
+    radial-gradient(circle at 72% 18%, #f3d99a 0 8%, transparent 9%),
+    linear-gradient(90deg, transparent 0 17%, #7699a4 18% 21%, transparent 22% 38%, #527887 39% 44%, transparent 45%),
+    linear-gradient(155deg, #9fb9bd 0 34%, #38606b 35% 60%, #102f36 61%);
 }
 
 .card-number {
