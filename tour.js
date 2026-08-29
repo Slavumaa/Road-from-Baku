@@ -19,11 +19,11 @@ const attractions = {
 const bakuAttractionImages = [
   "baku-old-city.jpg",
   "baku-maiden-tower.jpg",
-  "baku-old-city.jpg",
-  "baku-old-city.jpg",
+  "baku-shirvanshahs.jpg",
+  "baku-diamond-arm-street.jpg",
+  "baku-viewpoint.jpg",
   "baku-flame-towers.jpg",
-  "baku-flame-towers.jpg",
-  "baku-flame-towers.jpg",
+  "baku-oil-wells.jpg",
   "baku-heydar-center.jpg"
 ];
 
